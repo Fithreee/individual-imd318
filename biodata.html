@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adib's Journey - My Biodata</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0f0f0, #e9ecef);
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #FFD700;
+            color: black;
+            border-radius: 5px;
+        }
+
+        /* Slider */
+        .slider {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slider img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slider img.active {
+            opacity: 1;
+        }
+
+        .about-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .about-header h1 {
+            font-size: 4em;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 2s;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        main {
+            padding: 20px;
+            margin-top: 100px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            animation: fadeIn 1.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: gold;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #FFD700;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        /* Styling for Profile Image */
+        .profile-image {
+         width: 120px;
+         height: 120px;
+         border-radius: 50%;
+         object-fit: cover;
+         margin-right: 20px;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Layout adjustment for Personal Information section */
+.personal-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.info-text {
+    max-width: 600px;
+}
+        }
+
+        p, ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li i {
+            margin-right: 10px;
+            color: #0073e6;
+        }
+
+        a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .scroll-text {
+            font-size: 1.2em;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #FFD700;
+        }
+
+        /* Scroll to Top Button */
+        #scrollToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #FFD700;
+            color: black;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        #scrollToTop:hover {
+            background: #333;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            h1, h2 {
+                font-size: 1.5em;
+            }
+            
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a> |
+        <a href="biodata.html">Biodata</a> |
+        <a href="experience.html">Experience</a> |
+        <a href="education.html">Education</a> |
+        <a href="family.html">Family</a> |
+        <a href="friends.html">Friends</a> |
+        <a href="gallery.html">Gallery</a>
+    </div>
+
+    <div class="slider">
+        <img src="images/bg7.jpg" class="active" alt="Background 1">
+        <div class="about-header">
+            <h1>My Personal Information</h1>
+        </div>
+    </div>
+
+    <main>
+        <section class="intro">
+            <marquee behavior="scroll" direction="left" scrollamount="10">
+                <p class="scroll-text">It is all about my personal information that you want to know</p>
+            </marquee>
+        </section>
+
+        <div class="container">
+            <h1>About Me</h1>
+
+            <section class="section">
+                <h2>Personal Information</h2>
+            <img src="images/biodata1.jpg" alt="Profile Picture" class="profile-image">
+            <img src="images/biodata2.jpg" alt="Profile Picture" class="profile-image">
+            <img src="images/biodata3.jpg" alt="Profile Picture" class="profile-image">
+            <img src="images/biodata4.jpg" alt="Profile Picture" class="profile-image">
+            <img src="images/biodata5.jpg" alt="Profile Picture" class="profile-image">
+            <img src="images/biodata6.jpg" alt="Profile Picture" class="profile-image">
+        <div class="info-text">
+                <p><strong>Name:</strong> Muhammad Adib Fitri Bin Suhaimi</p>
+                <p><strong>Date of Birth:</strong> 20 December 2004</p>
+                <p><strong>Place of Birth:</strong> Teluk Intan, Perak</p>
+                <p><strong>Age:</strong> 20</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Nationality:</strong> Malaysia</p>
+            </section>
+
+            <section class="section">
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> <a href="mailto:adibf6624@gmail.com"><i class="fas fa-envelope"></i> adibf6624@gmail.com</a></p>
+                <p><strong>Phone:</strong> <i class="fas fa-phone"></i> 019-521 5787</p>
+                <p><strong>Address:</strong> <i class="fas fa-map-marker-alt"></i> 206, Lorong 6, Taman Intan Mas 3, 36000, Teluk Intan, Perak</p>
+            </section>
+
+            <section class="section">
+                <h2>Skills</h2>
+                <ul>
+                    <li><i class="fas fa-wrench"></i> Motorcycle Specialist</li>
+                    <li><i class="fas fa-video"></i> Video Editing</li>
+                    <li><i class="fas fa-guitar"></i> Playing Music Instruments</li>
+                    <li><i class="fas fa-code"></i> HTML Coding</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Soft Skills</h2>
+                <ul>
+                    <li><i class="fas fa-comments"></i> Communication</li>
+                    <li><i class="fas fa-users"></i> Teamwork</li>
+                    <li><i class="fas fa-clock"></i> Time-Management</li>
+                    <li><i class="fas fa-lightbulb"></i> Problem-Solving</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Hobbies</h2>
+                <ul>
+                    <li><i class="fas fa-video"></i> Making Videos</li>
+                    <li><i class="fas fa-utensils"></i> Hunting Food</li>
+                    <li><i class="fas fa-gamepad"></i> Playing Games</li>
+                    <li><i class="fas fa-motorcycle"></i> Riding a Motorcycle</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <audio id="background-music" src="audio/song2.mp3" autoplay loop muted></audio>
+    <button id="scrollToTop" onclick="scrollToTop()">&uarr;</button>
+
+    <footer>
+        <p>&copy; 2024 Adib's Journey | <a href="#">Back to Top</a></p>
+    </footer>
+<script>
+    const music = document.getElementById("background-music");
+
+    // Unmute and play audio after user interaction
+    document.addEventListener("click", () => {
+        music.muted = false;
+        music.play(); // Ensure it starts playing
+    }, { once: true });
+</script>
+<script>
+        const slides = document.querySelectorAll('.slider img');
+        let currentSlide = 0;
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(showNextSlide, 5000);
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('
+</script>
+</body>
+</html>

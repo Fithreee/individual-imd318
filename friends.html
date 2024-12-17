@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adib's Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background: url('image/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: black;
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar a:hover, .navbar a.active {
+            background-color: #FFD700;
+            color: black;
+            border-radius: 5px;
+        }
+
+        /* Header */
+        .experience-header {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .experience-header h1 {
+            font-size: 4em;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Intro Section */
+        .intro {
+            background-color: #fff4e6;
+            padding: 15px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-text {
+            display: inline-block;
+            animation: scroll-left 10s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .content-item-images {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .content-item-images img {
+            width: calc(50% - 10px); /* Two images side by side */
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .content-item-video {
+            flex: 1 1 100%; /* Video takes full width */
+            text-align: center;
+        }
+
+        .content-item-video video {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            border-radius: 10px;
+        }
+
+        /* Quote Section */
+        .quote-container {
+            margin: 30px auto;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .quote-container button {
+            padding: 10px 20px;
+            background-color: #FFD700;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .quote-container button:hover {
+            background-color: #FFA500;
+        }
+
+        .quotes {
+            display: none;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .quote-box {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            color: #FFD700;
+            font-style: italic;
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-item-images img {
+                width: 100%; /* Stack images on smaller screens */
+            }
+
+            .navbar a {
+                display: block;
+                padding: 15px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="biodata.html">Biodata</a>
+            <a href="experience.html">Experience</a>
+            <a href="education.html">Education</a>
+            <a href="family.html">Family</a>
+            <a href="friends.html">Friends</a>
+            <a href="gallery.html">Gallery</a>
+        </nav>
+    </div>
+
+    <audio id="background-music" src="audio/song6.mp3" autoplay loop muted></audio>
+
+    <!-- Friends Header -->
+    <div class="experience-header">
+        <h1>My Lovely Friends</h1>
+    </div>
+
+    <!-- Intro Section -->
+    <section class="intro">
+        <p class="scroll-text">This is all my lovely friends that I have in my whole life.</p>
+    </section>
+
+    <!-- School Friends -->
+    <section>
+        <center>
+        <h2>School Friends</h2>
+        <p>During high school & secondary school, there are many joys and sorrows created here. It also has many unforgettable memories.</p>
+        </center>
+        <div class="content-container">
+            <div class="content-item-images">
+                <img src="images/fr1.jpg" alt="School Friends"> 
+                <img src="images/fr2.jpg" alt="School Friends">
+            </div>
+            <div class="content-item-video">
+                <video controls>
+                    <source src="video/memory1.mp4" type="video/mp4">
+                </video>
+                <p>School Memory</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diploma Friends -->
+    <section>
+        <center>
+        <h2>Diploma Friends</h2>
+        <p>Diploma life is a beginning before entering the world of work that requires a certificate, diploma, or degree.</p>
+        </center>
+        <div class="content-container">
+            <div class="content-item-images">
+                <img src="images/fr4.jpg" alt="Diploma Friends">
+                <img src="images/fr5.jpg" alt="Diploma Friends">
+            </div>
+            <div class="content-item-video">
+                <video controls>
+                    <source src="video/memory2.mp4" type="video/mp4">
+                </video>
+                <p>Diploma Memory</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Old Friends -->
+    <section>
+        <center>
+        <h2>Old Friends</h2>
+        <p>Is a group of friends created since childhood where at that time they did not think of any problems.</p>
+        </center>
+        <div class="content-container">
+            <div class="content-item-images">
+                <img src="images/fr7.jpg" alt="Old Friends">
+                <img src="images/fr8.jpg" alt="Old Friends">
+            </div>
+            <div class="content-item-video">
+                <video controls>
+                    <source src="video/memory3.mp4" type="video/mp4">
+                </video>
+                <p>Old Memory</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quotes Section -->
+    <div class="quote-container">
+    <button onclick="toggleQuotes()">Thank You</button>
+    <div class="quotes">
+        <div class="quote-box">"True friends are like stars; you may not always see them, but you know they're always there."</div>
+        <div class="quote-box">"A friend is someone who knows all about you and still loves you."</div>
+        <div class="quote-box">"Friendship is born at that moment when one person says to another, 'What! You too? I thought I was the only one.'"</div>
+    </div>
+</div> <!-- Close the quotes container -->
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Adib's Journey | All Rights Reserved</p>
+</footer>
+<script>
+    const music = document.getElementById("background-music");
+
+    // Unmute and play audio after user interaction
+    document.addEventListener("click", () => {
+        music.muted = false;
+        music.play(); // Ensure it starts playing
+    }, { once: true });
+</script>
+
+</body>
+</html>
